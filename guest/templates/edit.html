@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block page_content %}
+
+<div class="mw9 center pa3 sans-serif">
+  <form method="POST" class="post-form" action="/edit/{{guest.id}}">
+    {% csrf_token %}
+    <div class="container">
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <h3>Update Details</h3>
+        </div>
+      </div>
+      {{ form }}
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-success">Update</button>
+          <a href="/" class="btn btn-warning">Back</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
